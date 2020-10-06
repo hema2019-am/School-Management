@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "695513083806",
+    "firebase_url": "https://schoolmanagement-10715.firebaseio.com",
+    "project_id": "schoolmanagement-10715",
+    "storage_bucket": "schoolmanagement-10715.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695513083806:android:0cee8152f36c53929c308f",
+        "android_client_info": {
+          "package_name": "com.example.ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695513083806-467cs8e0f4rhrl99jttsl48ed15si1ta.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ui",
+            "certificate_hash": "68e1993becd910b09b3ae215e46f724dc68e23fa"
+          }
+        },
+        {
+          "client_id": "695513083806-012sakknf0div2aonk8009gh9t97igej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXgZZnKhw3IoLIbWRHYfTBvTe66SfvV_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695513083806-012sakknf0div2aonk8009gh9t97igej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

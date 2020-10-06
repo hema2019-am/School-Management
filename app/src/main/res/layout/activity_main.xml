@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="7"
+        android:src="@drawable/school"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        android:layout_gravity="center"
+
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/rubik"
+        android:text="@string/jagtiti_vidya_mandir"
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/admin"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/main_button"
+        android:text="Admin"
+        android:textSize="30sp"
+        android:textColor="@android:color/holo_purple"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubik"
+        android:textStyle="bold"
+
+        />
+
+    <Button
+        android:id="@+id/parent"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@drawable/main_button"
+        android:text="Parent"
+        android:textSize="30sp"
+        android:textColor="@android:color/holo_purple"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubik"
+        android:textStyle="bold"
+
+        />
+
+
+</LinearLayout>
