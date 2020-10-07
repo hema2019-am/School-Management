@@ -116,7 +116,7 @@ mProgress.show();
                                             if(snapshot.hasChild(StudentExam)){
                                                 if(snapshot.child(StudentExam).hasChild(StudentRoll)){
                                                     mProgress.dismiss();
-                                                    if ("ukg".equals(StudentClass)) {
+                                                    if ("ukg".equalsIgnoreCase(StudentClass)) {
                                                         SubBengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
                                                         SubDrawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                                         SubEnglish = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
@@ -141,7 +141,7 @@ mProgress.show();
                                                         edt_Student_roll.setText("");
 
                                                         edt_StudentName.setText("");
-                                                    } else if ("lkg".equals(StudentClass)) {
+                                                    } else if ("lkg".equalsIgnoreCase(StudentClass)) {
                                                         SubDrawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                                         SubEnglish = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
                                                         SubEVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
@@ -167,7 +167,7 @@ mProgress.show();
                                                         edt_Student_roll.setText("");
 
                                                         edt_StudentName.setText("");
-                                                    } else if ("nursery".equals(StudentClass)) {
+                                                    } else if ("nursery".equalsIgnoreCase(StudentClass)) {
                                                         SubConversation = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
                                                         SubDrawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                                         SubEnglishLitearture = snapshot.child(StudentExam).child(StudentRoll).child("English_Literature").getValue().toString();

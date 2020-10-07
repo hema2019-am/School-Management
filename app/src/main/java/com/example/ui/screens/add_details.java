@@ -174,11 +174,11 @@ public class add_details extends AppCompatActivity implements AdapterView.OnItem
 
                     // it checks condition if the class is between nursery - 5th
                     if(StudentClass.toLowerCase().equals("nursery")
-                            || StudentClass.toLowerCase().equals("lkg") ||
-                            StudentClass.toLowerCase().equals("ukg") ||
-                            StudentClass.toLowerCase().equals("1") || StudentClass.toLowerCase().equals("2") ||
-                            StudentClass.toLowerCase().equals("3") || StudentClass.toLowerCase().equals("4") ||
-                            StudentClass.toLowerCase().equals("5")){
+                            || StudentClass.equalsIgnoreCase("lkg") ||
+                            StudentClass.equalsIgnoreCase("ukg") ||
+                            StudentClass.equalsIgnoreCase("1") || StudentClass.equalsIgnoreCase("2") ||
+                            StudentClass.equalsIgnoreCase("3") || StudentClass.equalsIgnoreCase("4") ||
+                            StudentClass.equalsIgnoreCase("5")){
                         studentDb = FirebaseDatabase.getInstance();
                         studentRef = studentDb.getReference().child("Student").child(StudentClass).child(StudentRoll);
                         HashMap<String, String> StudentDetails = new HashMap<>();

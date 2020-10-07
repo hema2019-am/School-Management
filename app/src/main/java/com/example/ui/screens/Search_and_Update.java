@@ -105,7 +105,7 @@ public class Search_and_Update extends AppCompatActivity implements AdapterView.
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if(snapshot.hasChild(StudentExam)){
                                         mProgressDialog.dismiss();
-                                        if (StudentClass.toLowerCase().equals("nursery")) {
+                                        if (StudentClass.equalsIgnoreCase("nursery")) {
                                             Conversation = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
                                             Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                             EnglishLiterature = snapshot.child(StudentExam).child(StudentRoll).child("English_Literature").getValue().toString();
@@ -116,30 +116,30 @@ public class Search_and_Update extends AppCompatActivity implements AdapterView.
 
 
                                             GetData();
-                                        } else if (StudentClass.toLowerCase().equals("lkg")) {
+                                        } else if (StudentClass.equalsIgnoreCase("lkg")) {
                                             Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                             English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
                                             EVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
                                             Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
                                             Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
                                             GetData();
-                                        } else if (StudentClass.toLowerCase().equals("ukg")) {
-                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child(Bengali).getValue().toString();
-                                            Drawing = snapshot.child(StudentRoll).child("Drawing").getValue().toString();
-                                            English = snapshot.child(StudentRoll).child("English").getValue().toString();
-                                            Hindi = snapshot.child(StudentRoll).child(Hindi).getValue().toString();
-                                            Mathematics = snapshot.child(StudentRoll).child("Mathematics").getValue().toString();
-                                            Rhymes = snapshot.child(StudentRoll).child("Rhymes").getValue().toString();
-                                            GetData();
-                                        } else if (StudentClass.equals("1")) {
-                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child(Bengali).getValue().toString();
+                                        } else if (StudentClass.equalsIgnoreCase("ukg")) {
+                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
                                             Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                             English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
-                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child(Hindi).getValue().toString();
+                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
+                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                            Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
+                                            GetData();
+                                        } else if (StudentClass.equalsIgnoreCase("1")) {
+                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
+                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                            English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
+                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
                                             Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
                                             Moral_ed = snapshot.child(StudentExam).child(StudentRoll).child("Moral_ed").getValue().toString();
                                             GetData();
-                                        } else if (StudentClass.equals("2") || StudentClass.equals("3") || StudentClass.equals("4") || StudentClass.equals("5")) {
+                                        } else if (StudentClass.equalsIgnoreCase("2") || StudentClass.equalsIgnoreCase("3") || StudentClass.equalsIgnoreCase("4") || StudentClass.equalsIgnoreCase("5")) {
                                             Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
                                             Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                             English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
