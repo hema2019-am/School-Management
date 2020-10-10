@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.AdminTas"
+    android:background="@android:color/white">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/add_update_toolbar"/>
+
+    <Button
+        android:id="@+id/btn_update_marks"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Update Student"
+        android:background="@drawable/button_color"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/add_update_toolbar"
+        />
+
+    <Button
+        android:id="@+id/btn_add_student"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Add Student"
+        android:layout_below="@id/btn_update_marks"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_color"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_view_student"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="View Student"
+        android:layout_below="@id/btn_add_student"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_color"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_view_class_result"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Class Result"
+        android:layout_below="@id/btn_view_student"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_color"
+        android:textColor="@android:color/white"/>
+
+
+
+
+
+</RelativeLayout>

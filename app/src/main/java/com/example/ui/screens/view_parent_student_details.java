@@ -56,8 +56,8 @@ public class view_parent_student_details extends AppCompatActivity {
         mToolbarAddStudents.setTitleTextColor(getResources().getColor(R.color.text_color));
         mStudentRef = FirebaseStorage.getInstance().getReference();
         mProgressDialog = new ProgressDialog(view_parent_student_details.this);
-        mProgressDialog.setTitle("Uploading Image");
-        mProgressDialog.setMessage("Please wait while we upload and process the image");
+        mProgressDialog.setTitle("Loading");
+        mProgressDialog.setMessage("Please wait");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
 

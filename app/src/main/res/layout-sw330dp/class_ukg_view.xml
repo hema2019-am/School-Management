@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+
+
+    >
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/class_ukg_parent_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/innerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/student_info_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/rollText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll No:"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/classText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class: "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/examType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exam: "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/text_parent_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="English: 00 "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/text_parent_maths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Mathematics: 00"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+
+
+        <TextView
+            android:id="@+id/text_parent_bengali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Bengali: 00 "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/text_parent_hindi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Hindi: 00 "
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/text_parent_Rhymes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Rhymes: 00"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/text_parent_drawing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Drawing: 00"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

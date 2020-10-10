@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">Gopali</string>
-    <string name="jagtiti_vidya_mandir">Jagtiti Vidya Mandir</string>
+    <string name="app_name">JVM Results</string>
+    <string name="jagtiti_vidya_mandir">JAGRITI VIDHYA MANDIR</string>
+    <string name="child_precious">(CHILD IS PRECIOUS BUT CHILDHOOD IS PRICELESS)</string>
+    <string name="gopali">Gopali Youth Welfare Society</string>
+    <string name="government">Government Registered Non-Government Organization</string>
 </resources>

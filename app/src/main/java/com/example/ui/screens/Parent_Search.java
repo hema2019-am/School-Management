@@ -92,7 +92,7 @@ mProgress.show();
                     StudentRoll = edt_Student_roll.getText().toString();
 
 
-                    if (TextUtils.isEmpty(StudentName) && TextUtils.isEmpty(StudentRoll)) {
+                    if (TextUtils.isEmpty(StudentName) || TextUtils.isEmpty(StudentRoll)) {
                         mProgress.hide();
                         Toast.makeText(Parent_Search.this, "empty Fields", Toast.LENGTH_SHORT).show();
                     } else {
@@ -171,7 +171,7 @@ mProgress.show();
                                                         SubConversation = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
                                                         SubDrawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
                                                         SubEnglishLitearture = snapshot.child(StudentExam).child(StudentRoll).child("English_Literature").getValue().toString();
-                                                        SubEnglisgHandwriting = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
+                                                        SubEnglisgHandwriting = snapshot.child(StudentExam).child(StudentRoll).child("English_Handwriting").getValue().toString();
                                                         SubMathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
                                                         SubRhyme = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
                                                         SubPT = snapshot.child(StudentExam).child(StudentRoll).child("PT").getValue().toString();
@@ -244,13 +244,13 @@ mProgress.show();
                                                     }
                                                 }else{
                                                     mProgress.dismiss();
-                                                    Toast.makeText(Parent_Search.this, "No data for this student", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(Parent_Search.this, "No data", Toast.LENGTH_SHORT).show();
                                                 }
 
 
                                             }else {
                                                 mProgress.dismiss();
-                                                Toast.makeText(Parent_Search.this, "No data for this exam", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(Parent_Search.this, "No data", Toast.LENGTH_SHORT).show();
                                             }
 
                                         }
@@ -262,7 +262,7 @@ mProgress.show();
                                     });
                                 } else {
                                     mProgress.dismiss();
-                                    Toast.makeText(getApplicationContext(), "it's not", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Wrong input data", Toast.LENGTH_SHORT).show();
                                 }
 
                             }

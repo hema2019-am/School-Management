@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -84,100 +85,106 @@ public class Search_and_Update extends AppCompatActivity implements AdapterView.
                 StudentRoll = edt_roll.getText().toString();
 
 
+                if (TextUtils.isEmpty(StudentName) || TextUtils.isEmpty(StudentRoll)) {
+                    mProgressDialog.hide();
+                    Toast.makeText(Search_and_Update.this, "empty Fields", Toast.LENGTH_SHORT).show();
+                }else {
+                    mStudentRef = FirebaseDatabase.getInstance().getReference().child("Student").child(StudentClass);
+                    mStudentRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChild(StudentRoll)) {
 
-                mStudentRef = FirebaseDatabase.getInstance().getReference().child("Student").child(StudentClass);
-                mStudentRef.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.hasChild(StudentRoll)) {
-
-                            Name = snapshot.child(StudentRoll).child("Name").getValue().toString();
-                            FatherName = snapshot.child(StudentRoll).child("FatherName").getValue().toString();
-                            MotherName = snapshot.child(StudentRoll).child("MotherName").getValue().toString();
-                            Contact = snapshot.child(StudentRoll).child("Contact").getValue().toString();
-
-
-                            mclassRef = FirebaseDatabase.getInstance().getReference().child("Student_Marks").child(StudentClass);
-
-
-                            mclassRef.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.hasChild(StudentExam)){
-                                        mProgressDialog.dismiss();
-                                        if (StudentClass.equalsIgnoreCase("nursery")) {
-                                            Conversation = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
-                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
-                                            EnglishLiterature = snapshot.child(StudentExam).child(StudentRoll).child("English_Literature").getValue().toString();
-                                            EnglishHandwrting = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
-                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
-                                            Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
-                                            PT = snapshot.child(StudentExam).child(StudentRoll).child("PT").getValue().toString();
+                                Name = snapshot.child(StudentRoll).child("Name").getValue().toString();
+                                FatherName = snapshot.child(StudentRoll).child("FatherName").getValue().toString();
+                                MotherName = snapshot.child(StudentRoll).child("MotherName").getValue().toString();
+                                Contact = snapshot.child(StudentRoll).child("Contact").getValue().toString();
 
 
-                                            GetData();
-                                        } else if (StudentClass.equalsIgnoreCase("lkg")) {
-                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
-                                            English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
-                                            EVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
-                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
-                                            Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
-                                            GetData();
-                                        } else if (StudentClass.equalsIgnoreCase("ukg")) {
-                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
-                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
-                                            English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
-                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
-                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
-                                            Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
-                                            GetData();
-                                        } else if (StudentClass.equalsIgnoreCase("1")) {
-                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
-                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
-                                            English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
-                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
-                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
-                                            Moral_ed = snapshot.child(StudentExam).child(StudentRoll).child("Moral_ed").getValue().toString();
-                                            GetData();
-                                        } else if (StudentClass.equalsIgnoreCase("2") || StudentClass.equalsIgnoreCase("3") || StudentClass.equalsIgnoreCase("4") || StudentClass.equalsIgnoreCase("5")) {
-                                            Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
-                                            Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
-                                            English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
-                                            Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
-                                            Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
-                                            EVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
-                                            Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
-                                            GK = snapshot.child(StudentExam).child(StudentRoll).child("GK").getValue().toString();
-                                            GetData();
+                                mclassRef = FirebaseDatabase.getInstance().getReference().child("Student_Marks").child(StudentClass);
 
+
+                                mclassRef.addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.hasChild(StudentExam)){
+                                            mProgressDialog.dismiss();
+                                            if (StudentClass.equalsIgnoreCase("nursery")) {
+                                                Conversation = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
+                                                Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                                EnglishLiterature = snapshot.child(StudentExam).child(StudentRoll).child("English_Literature").getValue().toString();
+                                                EnglishHandwrting = snapshot.child(StudentExam).child(StudentRoll).child("EnglishConversation").getValue().toString();
+                                                Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                                Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
+                                                PT = snapshot.child(StudentExam).child(StudentRoll).child("PT").getValue().toString();
+
+
+                                                GetData();
+                                            } else if (StudentClass.equalsIgnoreCase("lkg")) {
+                                                Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                                English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
+                                                EVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
+                                                Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                                Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
+                                                GetData();
+                                            } else if (StudentClass.equalsIgnoreCase("ukg")) {
+                                                Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
+                                                Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                                English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
+                                                Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
+                                                Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                                Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
+                                                GetData();
+                                            } else if (StudentClass.equalsIgnoreCase("1")) {
+                                                Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
+                                                Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                                English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
+                                                Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
+                                                Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                                Moral_ed = snapshot.child(StudentExam).child(StudentRoll).child("Moral_ed").getValue().toString();
+                                                GetData();
+                                            } else if (StudentClass.equalsIgnoreCase("2") || StudentClass.equalsIgnoreCase("3") || StudentClass.equalsIgnoreCase("4") || StudentClass.equalsIgnoreCase("5")) {
+                                                Bengali = snapshot.child(StudentExam).child(StudentRoll).child("Bengali").getValue().toString();
+                                                Drawing = snapshot.child(StudentExam).child(StudentRoll).child("Drawing").getValue().toString();
+                                                English = snapshot.child(StudentExam).child(StudentRoll).child("English").getValue().toString();
+                                                Hindi = snapshot.child(StudentExam).child(StudentRoll).child("Hindi").getValue().toString();
+                                                Mathematics = snapshot.child(StudentExam).child(StudentRoll).child("Mathematics").getValue().toString();
+                                                EVS = snapshot.child(StudentExam).child(StudentRoll).child("EVS").getValue().toString();
+                                                Rhymes = snapshot.child(StudentExam).child(StudentRoll).child("Rhymes").getValue().toString();
+                                                GK = snapshot.child(StudentExam).child(StudentRoll).child("GK").getValue().toString();
+                                                GetData();
+
+                                            }
+
+                                        }else {
+                                            mProgressDialog.dismiss();
+                                            Toast.makeText(Search_and_Update.this, "No data", Toast.LENGTH_SHORT).show();
                                         }
 
-                                    }else {
-                                        mProgressDialog.dismiss();
-                                        Toast.makeText(Search_and_Update.this, "No marks stored for this exam", Toast.LENGTH_SHORT).show();
+
                                     }
 
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
 
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
+                                    }
+                                });
 
 
-                        } else {
-                            mProgressDialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "The student is not present", Toast.LENGTH_SHORT).show();
+                            } else {
+                                mProgressDialog.dismiss();
+                                Toast.makeText(getApplicationContext(), "The student is not present", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                        }
+                    });
+                }
+
+
 
             }
         });

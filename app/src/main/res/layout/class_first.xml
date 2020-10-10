@@ -18,7 +18,8 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:background="@drawable/student_info_background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/nameTextAdmin"
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Name: "
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/rollTextAdmin"
@@ -34,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Roll No:"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/classTextAdmin"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Class: "
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -56,13 +57,15 @@
                 android:layout_height="wrap_content"
                 android:text="Exam: "
                 android:textColor="@android:color/black"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <Spinner
                 android:id="@+id/spinner_exam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
 
                 />
 

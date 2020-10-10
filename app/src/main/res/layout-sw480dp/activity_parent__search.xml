@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.Parent_Search"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/toolbar_parent_search"
+        layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/txt_Parent_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="35sp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/toolbar_parent_search"
+        android:layout_marginTop="100dp"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/edt_parent_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_toRightOf="@id/txt_Parent_name"
+        android:layout_below="@id/toolbar_parent_search"
+        android:layout_marginTop="100dp"
+        android:hint="student name"
+        android:textSize="15sp"
+        android:layout_marginLeft="20dp"
+
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/txt_Parent_roll_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_Parent_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="43dp"
+        android:text="Roll No: "
+        android:textColor="@android:color/black"
+        android:textSize="35sp" />
+
+    <EditText
+        android:id="@+id/edt_parent_roll_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_toRightOf="@id/txt_Parent_roll_call"
+        android:layout_below="@id/edt_parent_name"
+        android:layout_marginTop="50dp"
+        android:hint="roll number"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"/>
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/txt_Parent_class_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class: "
+        android:textSize="35sp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/txt_Parent_roll_call"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+
+
+        />
+
+
+    <Spinner
+        android:id="@+id/edt_Parent_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_parent_roll_call"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="42dp"
+
+        android:layout_toRightOf="@id/txt_Parent_class_update"
+        android:textColor="@android:color/black" />
+
+
+    <TextView
+        android:id="@+id/txt_Parent_exam_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_Parent_class_update"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:text="Exam: "
+        android:textColor="@android:color/black"
+        android:textSize="35sp"
+
+
+        />
+
+
+    <Spinner
+        android:id="@+id/edt_Parent_exam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_Parent_class_update"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/txt_Parent_exam_update" />
+
+    <Button
+        android:id="@+id/btn_search_parent_student"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_color"
+        android:textColor="@android:color/white"
+        android:text="Search"
+        android:textSize="20sp"
+        android:layout_below="@id/edt_Parent_exam"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+
+
+
+
+</RelativeLayout>

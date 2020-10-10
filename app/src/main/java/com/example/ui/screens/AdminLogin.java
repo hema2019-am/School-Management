@@ -2,6 +2,7 @@ package com.example.ui.screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
 import android.app.ProgressDialog;
@@ -45,6 +46,7 @@ public class AdminLogin extends AppCompatActivity {
 
     DatabaseReference mAdminLogin;
     TextView mAdminName;
+    Toolbar mLoginToolbar;
 
 
     @Override
@@ -95,6 +97,11 @@ public class AdminLogin extends AppCompatActivity {
         edt_password = findViewById(R.id.edt_admin_password);
         btn_admin_login = findViewById(R.id.btn_admin_login);
         mAdminName = findViewById(R.id.edt_admin_name);
+        mLoginToolbar = findViewById(R.id.mainAppBar);
+        setSupportActionBar(mLoginToolbar);
+        getSupportActionBar().setTitle("Admin");
+        mLoginToolbar.setTitleTextColor(getResources().getColor(R.color.text_color));
+
 
     }
 
@@ -127,6 +134,7 @@ public class AdminLogin extends AppCompatActivity {
                                     Toast.makeText(AdminLogin.this, "can't access", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
+                                LoginProgress.hide();
                                 Toast.makeText(AdminLogin.this, "Can't access", Toast.LENGTH_SHORT).show();
                             }
                         }
