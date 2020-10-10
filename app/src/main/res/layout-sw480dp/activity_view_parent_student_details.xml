@@ -96,27 +96,7 @@
                     android:layout_height="1dp"
                     android:background="@android:color/darker_gray"/>
 
-                <TextView
-                    android:id="@+id/txt_examType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
 
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Exam: "
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-
-
-                    />
-
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"/>
 
 
 

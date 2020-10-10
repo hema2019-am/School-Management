@@ -14,7 +14,6 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClassResult"></activity>
         <activity android:name=".screens.view_parent_student_details" />
         <activity
             android:name=".screens.Parent_Search"

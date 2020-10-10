@@ -143,7 +143,7 @@ public class view_parent_student_details extends AppCompatActivity {
         StudentContact = findViewById(R.id.txt_contact_details);
         StudentRoll = findViewById(R.id.txt_roll);
         StudentName = findViewById(R.id.txt_name);
-        StudentExam = findViewById(R.id.txt_examType);
+
 
 
         IntentClass = getIntent().getStringExtra("StudentClass");
@@ -175,7 +175,7 @@ public class view_parent_student_details extends AppCompatActivity {
         StudentMothername.setText("Mother Name: "+IntentMothername);
         StudentFathername.setText("Father Name: "+IntentFatherName);
         StudentClass.setText("Class: "+IntentClass);
-        StudentExam.setText("Exam: " + IntentExamType);
+
 
 
 

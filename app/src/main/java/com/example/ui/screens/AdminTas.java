@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.ui.ClassResult;
 import com.example.ui.ConnectingReceview;
 import com.example.ui.MainActivity;
 import com.example.ui.R;
@@ -87,19 +86,7 @@ public class AdminTas extends AppCompatActivity {
         });
 
 
-        findViewById(R.id.btn_view_class_result).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ConnectingReceview.checkConnection(getApplicationContext())) {
-                    // Its Available...
-                    Intent viewStudent= new Intent(getApplicationContext(), ClassResult.class);
-                    startActivity(viewStudent);
-                } else {
-                    // Not Available...
-                    Toast.makeText(AdminTas.this, "Connect to internet", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
